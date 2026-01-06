@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(git -C /Users/jeremy/Projects/dreamcast3 log --oneline -10)",
+      "Bash(npm install)",
+      "Bash(npm run build:*)",
+      "Bash(npm run clean:*)",
+      "Bash(tree:*)",
+      "Bash(cat:*)",
+      "Bash(wc:*)",
+      "Bash(npm run test:coverage:*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm run test:run:*)"
+    ]
+  }
+}

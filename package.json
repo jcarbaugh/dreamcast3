@@ -1,0 +1,73 @@
+{
+  "name": "dreamcast3",
+  "version": "3.0.0",
+  "type": "module",
+  "description": "Lightweight JavaScript game framework for building 2D games using native SVG rendering",
+  "main": "dist/dreamcast3.cjs.js",
+  "module": "dist/dreamcast3.esm.js",
+  "browser": "dist/dreamcast3.js",
+  "types": "dist/dreamcast3.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "build:prod": "NODE_ENV=production rollup -c",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run clean && npm run build:prod"
+  },
+  "keywords": [
+    "game",
+    "framework",
+    "svg",
+    "2d",
+    "sprites",
+    "animation",
+    "typescript"
+  ],
+  "author": "Jeremy Carbaugh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcarbaugh/dreamcast3.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "homepage": "https://github.com/jcarbaugh/dreamcast3#readme",
+  "bugs": {
+    "url": "https://github.com/jcarbaugh/dreamcast3/issues"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/dreamcast3.esm.js",
+      "require": "./dist/dreamcast3.cjs.js",
+      "default": "./dist/dreamcast3.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@vitest/coverage-v8": "^4.0.16",
+    "@vitest/ui": "^4.0.16",
+    "esbuild": "^0.27.2",
+    "happy-dom": "^20.0.11",
+    "rollup": "^4.9.6",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3",
+    "vitest": "^4.0.16"
+  }
+}
