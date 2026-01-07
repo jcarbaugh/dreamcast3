@@ -14,7 +14,7 @@ export class Scene {
   game?: Game;
 
   init?: () => void;
-  update?: (delta: number) => void;
+  onUpdate?: (delta: number) => void;
 
   constructor(id: string, options?: SceneOptions) {
     this.id = id;
@@ -36,8 +36,8 @@ export class Scene {
     for (let i = 0; i < this.actors.length; i++) {
       this.actors[i].update(delta);
     }
-    if (this.update) {
-      this.update(delta);
+    if (this.onUpdate) {
+      this.onUpdate(delta);
     }
   }
 

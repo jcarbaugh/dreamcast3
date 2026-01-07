@@ -72,7 +72,7 @@ npm install dreamcast3
         init() {
           console.log('Scene initialized!');
         },
-        update(delta) {
+        onUpdate(delta) {
           // Game logic here
         }
       });
@@ -106,7 +106,7 @@ const options: GameOptions = {
 
 const game = new Game('#game', options, (g) => {
   const mainScene = g.newScene('main', {
-    update(delta) {
+    onUpdate(delta) {
       // Your game loop
     }
   });
@@ -160,7 +160,7 @@ const scene = game.newScene('gameplay', {
   init() {
     // Called when scene becomes active
   },
-  update(delta) {
+  onUpdate(delta) {
     // Called every frame with delta time
   },
   onDestroy() {

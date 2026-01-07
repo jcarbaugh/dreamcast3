@@ -21,7 +21,7 @@ The framework is organized around three main classes in `src/core/`:
 ### Scene (src/core/Scene.ts)
 - Represents a game state/screen (menu, gameplay, pause, etc.)
 - Contains actors (sprites) and custom layers
-- Has lifecycle methods: `init()`, `update(delta)`, `pause()`, `resume()`, `destroy()`
+- Has lifecycle methods: `init()`, `onUpdate(delta)`, `pause()`, `resume()`, `destroy()`
 - Supports scheduled tasks that run on intervals
 - Only the current (topmost) scene in the stack updates and renders
 

@@ -38,13 +38,13 @@ describe('Scene', () => {
 
       const scene = new Scene('test-scene', {
         init: initFn,
-        update: updateFn,
+        onUpdate: updateFn,
         onDestroy: destroyFn
       });
 
       expect(scene.id).toBe('test-scene');
       expect(scene.init).toBe(initFn);
-      expect(scene.update).toBe(updateFn);
+      expect(scene.onUpdate).toBe(updateFn);
       expect(scene.onDestroy).toBe(destroyFn);
     });
 
@@ -101,7 +101,7 @@ describe('Scene', () => {
 
     it('should call update function if provided', () => {
       const updateFn = vi.fn();
-      const scene = new Scene('test-scene', { update: updateFn });
+      const scene = new Scene('test-scene', { onUpdate: updateFn });
 
       scene.tick(16);
       expect(updateFn).toHaveBeenCalledTimes(1);
@@ -132,7 +132,7 @@ describe('Scene', () => {
 
     it('should call both actor updates and scene update', () => {
       const sceneUpdate = vi.fn();
-      const scene = new Scene('test-scene', { update: sceneUpdate });
+      const scene = new Scene('test-scene', { onUpdate: sceneUpdate });
       scene.game = game;
 
       const actor = { update: vi.fn(), scene, layer: game.svg.root() };

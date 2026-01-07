@@ -4,5 +4,5 @@ export interface SceneOptions {
   layer?: SVGGElement | null;
   onDestroy?: (() => void) | null;
   init?: () => void;
-  update?: (delta: number) => void;
+  onUpdate?: (delta: number) => void;
 }
