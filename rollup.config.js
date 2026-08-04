@@ -1,19 +1,20 @@
-import typescript from '@rollup/plugin-typescript';
+import esbuild from 'rollup-plugin-esbuild';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+// Declaration files are emitted separately by `tsc --emitDeclarationOnly`
+// (see the build script) since esbuild does not do type-aware emit.
 const baseConfig = {
   input: 'src/index.ts',
   plugins: [
     resolve(),
     commonjs(),
-    typescript({
+    esbuild({
       tsconfig: './tsconfig.json',
-      declaration: true,
-      declarationDir: './dist',
+      target: 'es2015',
       sourceMap: true
     })
   ]
