@@ -67,6 +67,6 @@
     "rollup": "^4.62.3",
     "rollup-plugin-esbuild": "^6.2.1",
     "typescript": "^7.0.2",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.11"
   }
 }
