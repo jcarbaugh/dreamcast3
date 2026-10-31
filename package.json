@@ -63,7 +63,7 @@
     "@vitest/coverage-v8": "^4.1.10",
     "@vitest/ui": "^4.1.10",
     "esbuild": "^0.28.1",
-    "happy-dom": "^20.11.1",
+    "happy-dom": "^21.0.4",
     "rollup": "^4.62.3",
     "rollup-plugin-esbuild": "^6.2.1",
     "typescript": "^7.0.2",
